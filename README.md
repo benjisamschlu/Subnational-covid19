@@ -7,7 +7,7 @@ Paper submitted to Archives of Public Health (BMC) scientific journal. Pre-print
 
 ## Purpose
 
-This file and all other files in the repository should enable you to reproduce our results, plots, tables, ... from our joint paper. Our paper assesses how the mortality of the Belgian districts has been impacted in the context of the Covid19  pandemic. We look at how the heterogeneity in mortality level within Belgium has evolved in 2020 relatively to previous years. In addition, we propose a methodology to measure the shock on mortality at the district level, accounting for different sources of uncertainty.
+This file and all other files in the repository should enable you to reproduce our results, plots, tables, ... from our joint paper. Our paper assesses how the mortality of the Belgian districts has been impacted in the context of the Covid19  pandemic. We assess how the heterogeneity in mortality levels within Belgium has evolved in 2020 relatively to previous years. In addition, we propose a methodology to measure the shock on mortality at the district level, accounting for different sources of uncertainty.
 
 ## Directory structure
 There should be a single parent directory on your file system, where you have to set your R working directory and which will be divided into sub-directories named:
