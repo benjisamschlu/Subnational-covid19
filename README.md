@@ -14,7 +14,7 @@ There should be a single parent directory on your file system, where you have to
 
 /code
 
-&nbsp;&nbsp;&nbsp;&nbsp; /functions
+&nbsp;&nbsp;&nbsp;&nbsp; /functions
 
 &nbsp;&nbsp;&nbsp;&nbsp;/stan
 
@@ -38,5 +38,9 @@ The data set used for these analyses is called `df_ageyearsexadmins_extrapol2020
 
 Script `smr_subnational.R` (within /code) in combination with script `smr_subnational.stan` (inside /code/stan), allows to assess the subnational heterogeneity in mortality over the period 2015-2020. The metrics used are standardized mortality ratios. Figures about this part of the analysis are produced by the script.
 
-Script `e0_nat_projection_LC.R` (within /code) estimates the Lee-Carter model at the national level in a Bayesian context using `lee_carter.stan` (Stan code written by Monica Alexander available on her Github).
+Script `e0_nat_projection_LC.R` (within /code) estimates the Lee-Carter model at the national level in a Bayesian context using `lee_carter.stan` (Stan code written by Monica Alexander available on her Github). It stores the national posterior life expectancy in 2020 that will be used to construct subnational counterfactual scenario in 2020.
+
+Script `e0_subnat_projection` (within /code) in combination with `diff_e0_subnat_trend.stan` measures the shock on mortality at the district level during the year 2020. As a shock measure, we use the life expectancy at birth. The developed methodology tries to assess, as much as possible, for all uncertainty sources.
+
+Finally, `maps_creation.R` creates maps with outputs stored while running `e0_subnat_projection`.  
 
