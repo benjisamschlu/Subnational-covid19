@@ -308,7 +308,36 @@ df.theta %>%
 #        device = "pdf")
 
 
+# Obtain highest vs lowest SMR ratio for each year
 
+# lapply(2015:2020, function(y) {
+# 
+#         range.t <- df.theta %>% filter(year == y) %>%
+#                 pull(median) %>%
+#                 range(.)
+#         dist.t <- df.theta %>% filter(year == y,
+#                                       median %in% range.t)
+#         ratio.t <- range.t[2]/range.t[1]
+#         return(list(ratio = ratio.t,
+#                     dist = dist.t))
+# })
+
+# Obtain district with small temporal variation
+
+# ratio.D <- lapply(unique(df.theta$dist), function(d) {
+#         
+#         ratio.d <- df.theta %>% filter(dist == d,
+#                                        year != 2020) %>% 
+#                 pull(median) %>% 
+#                 range(.)
+#         return(c(ratio = ratio.d[2]/ratio.d[1],
+#                     ratio.d = ratio.d))
+# })
+# range.D <- tibble(ratio = do.call(rbind, ratio.D)[, 1],
+#                   lowest = do.call(rbind, ratio.D)[, 2],
+#                   highest = do.call(rbind, ratio.D)[, 3],
+#                   dist = unique(df.theta$dist)) %>% 
+#         arrange(ratio)
 
 # SMR posterior ranking distribution
 
