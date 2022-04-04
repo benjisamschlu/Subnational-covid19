@@ -431,6 +431,28 @@ df.ppc %>%
 #        device = "pdf")
 
 
+# Alternative to posterior predictive check
+set.seed(14)
+ggplot() +
+        geom_density(data = df.diff_e0_rep %>% 
+                             filter(sim %in% paste0("sim", sample(1:4000, 100))),
+                     aes(diff_e, group = sim, col = "y rep")) +
+        geom_density(data = df.e0 %>% filter(year != 2020),
+                     aes(diff_e, col = "y"),
+                     size = 2) +
+        theme_bw() +
+        theme(legend.position = c(0.93, 0.07),
+              legend.title = element_blank(),
+              axis.title.y = element_blank(),
+              axis.text.y = element_blank(),
+              axis.ticks.y = element_blank() ) +
+        scale_color_manual(values = c("y rep" = "skyblue3",
+                                      "y" = "blue"),
+                           labels = c(expression(paste(" ", alpha["d,t"], " rep")), expression(paste(" ", alpha["d,t"], " true")))) +
+        labs(x = "Difference in e0, years") +
+        facet_wrap(~ year) 
+
+
 # ----- Distribution of residuals from model ----------------------------------------------------------------------------------------------
 
 # Create df and create expected value
